@@ -12,7 +12,7 @@ exports = {
     this.host = config.host;
     this.path = config.path;
     this.port = config.port;
-    this.clientID = config.clientID;
+    this.roomID = config.roomID;
   },
   getPath: function() {
     return "http://" + this.host + ':' + this.port + '/' + this.path + '/';
@@ -20,21 +20,13 @@ exports = {
   getResource: function(resourse) {
     return this.getPath() + resourse;
   },
-  sendTemperature: function(deg) {
+  send: function(climate) {
     return request.post({
-      uri: this.getResource('temp'),
+      uri: this.getResource('climate'),
       form: {
-        client: this.clientID,
-        temp: deg
-      }
-    });
-  },
-  sendHumidity: function(humidity) {
-    return request.post({
-      uri: this.getResource('humidity'),
-      form: {
-        client: this.clientID,
-        humidity: humidity
+        roomID: this.roomID,
+        humid: climate.humid,
+        temp: climate.temp
       }
     });
   }

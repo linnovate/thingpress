@@ -13,9 +13,11 @@ climate.on('ready', function () {
     climate.readTemperature('c', function (err, temp) {
       climate.readHumidity(function (err, humid) {
         console.log('Degrees:', temp.toFixed(4) + 'C', 'Humidity:', humid.toFixed(4) + '%RH');
-        meanAPI.sendHumidity(temp.toFixed(4));
-        meanAPI.sendTemperature(humid.toFixed(4));
-        setTimeout(loop, 500);
+        meanAPI.send({
+          temp: temp.toFixed(4),
+          humid: humid.toFixed(4)
+        });
+        setTimeout(loop, 1000);
       });
     });
   });

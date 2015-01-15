@@ -2,5 +2,5 @@
   "host": "thingpress.cloudapp.net",
   "port": 80,
   "path": "api/listener",
-  "clientID": "microsoft-azure-hackaton"
+  "roomID": "microsoft-azure-hackaton"
 }
