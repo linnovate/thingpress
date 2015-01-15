@@ -111,13 +111,43 @@ exports.neuraStat = function(req, res) {
       }
 
       summary = JSON.parse(summary);
-      res.json({
-        date: new Date(),
-        glucose: glucose.data.value,
-        steps: summary.data.steps,
-        calories: summary.data.calories,
-        sleepDuration: summary.data.sleepData.length
+      Climate.findOne({}, {}, { sort: { 'created' : -1 } }, function(err, climate) {
+        if (err) {
+          return res.status(500).json({
+            error: 'Cannot get the climate'
+          });
+        }
+
+        var data = {
+          date: new Date(),
+          glucose: glucose.data.value,
+          steps: summary.data.steps,
+          calories: summary.data.calories,
+          sleepDuration: summary.data.sleepData.length
+        };
+        var workout = workoutCost(climate.temp, data.calories, data.sleepDuration);
+        workout.precentage = workoutPrecentage(data.glucose,workout);
+        data.workout = workout;
+
+        res.json(data);
       });
     });
   });
 };
+
+function workoutCost(temp, cal, sleep) {
+  var multipliers = {
+    temp: (temp/180)+1,
+    cal: cal/7000,
+    sleep: (7.5-sleep)/3.2
+  };
+  var multiply = multipliers.temp+multipliers.cal+multipliers.sleep;
+  return {
+    min: 20*multiply,
+    max: 50*multiply
+  };
+}
+function workoutPrecentage(glou, cost){
+  var maxWorkout = glou - 60 - cost.min;
+  return (maxWorkout*100)/(cost.max - cost.min);
+}
