@@ -24,10 +24,41 @@
   <body ng-app="starter">
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
+
       <ion-content>
+          <div id="glucose">
+            <div id="needle"></div>
+              <span class="glu-value">102</span>
+              <h4>Glucsoe Level</h4>
+          </div>
+
+          <div id="fitness">
+            
+            <div class="fit-message">Your good for <strong>Intence </strong> workout</div>
+            <div class="ruler">
+              <span class="triangle"></span>
+
+            </div>
+          </div> <!--fit message-->
+          <div id="data">
+            <div class="number" id="data-sleep">
+              <div class="value">6.5<span>hr</span></div>
+              <div class="label">Sleep</div>
+            </div>
+            <div class="number" id="data-cal">
+              <div class="value">695 <span>cal</span></div>
+              <div class="label">Calories Burnt</div>
+            </div>
+            <div class="number" id="data-steps">
+              <div class="value">2323</div>
+              <div class="label">steps</div>
+            </div>
+          </div>
+          <!-- /#data -->
+          <div id="graph">
+            
+          </div>
+          <!-- /#graph -->
       </ion-content>
     </ion-pane>
   </body>
