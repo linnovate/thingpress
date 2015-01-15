@@ -95,15 +95,29 @@ exports.all = function(req, res) {
 };
 
 exports.neuraStat = function(req, res) {
-  neuraAPI.getGlucose().on('response', function(glucose) {
-    neuraAPI.getTodaySummary().on('response', function(summary) {
-      var data = {
+  neuraAPI.getGlucose(function(err, resp, glucose) {
+    if (err) {
+      return res.status(500).json({
+        error: 'Cannot list the glucose'
+      });
+    }
+
+    glucose = JSON.parse(glucose);
+    neuraAPI.getTodaySummary(function(err, resp, summary) {
+      if (err) {
+        return res.status(500).json({
+          error: 'Cannot list the summary'
+        });
+      }
+
+      summary = JSON.parse(summary);
+      res.json({
         date: new Date(),
         glucose: glucose.data.value,
         steps: summary.data.steps,
         calories: summary.data.calories,
         sleepDuration: summary.data.sleepData.length
-      };
+      });
     });
   });
 };

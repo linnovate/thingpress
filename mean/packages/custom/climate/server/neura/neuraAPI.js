@@ -21,29 +21,33 @@ module.exports = {
     return this;
   },
   getPath: function() {
-    return "http://" + this.host + ':' + this.port + '/' + this.path;
+    return "https://" + this.host + ':' + this.port + '/' + this.path;
   },
   getResource: function(resourse) {
     return this.getPath() + resourse;
   },
-  getDaily: function(date) {
+  getDaily: function(date,cb) {
     var data = {
       uri: this.getResource('users/profile/daily_summary'),
-      bearer: this.access_key,
+      auth: {
+        bearer: this.access_key
+      },
       form: {
         date: date2day(date)
       }
     };
-    return request.get(data);
+    return request.get(data,cb);
   },
-  getTodaySummary: function() {
-    return this.getDaily(new Date());
+  getTodaySummary: function(cb) {
+    return this.getDaily(new Date(),cb);
   },
-  getGlucose: function() {
+  getGlucose: function(cb) {
     var data = {
       uri: this.getResource('users/profile/measurements/glucose'),
-      bearer: this.access_key
+      auth: {
+        bearer: this.access_key
+      }
     };
-    return request.get(data);
+    return request.get(data,cb);
   }
 };
