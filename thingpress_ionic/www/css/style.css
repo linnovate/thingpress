@@ -1,1 +1,14 @@
 /* Empty. Add your own CSS if you like */
+.pane {
+  background:black;
+  color:white;
+  background:url(../img/assets/bg.jpg) no-repeat top ;
+  background-size:cover;
+}
+
+#glucose {
+
+  margin:2%;
+  background:white url(../img/assets/gauge.png) top 30px center;
+  padding:30px;
+}
