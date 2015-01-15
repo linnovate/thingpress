@@ -18,18 +18,14 @@ angular.module('starter', ['ionic','nvd3ChartDirectives'])
     }
   });
 })
-.controller('widgetCtrl',['$scope','getNeura',
-  function($scope){
+.controller('widgetCtrl',['$scope','Neura',
+  function($scope,Neura){
     // get Neura stats
 
     $scope.neuraData = getNeuraData();
 
     function getNeuraData() {
-      Articles.get({
-        articleId: $stateParams.articleId
-      }, function(article) {
-        vm.article = article;
-      });
+      Neura.get();
     };
 
     // get Climate
