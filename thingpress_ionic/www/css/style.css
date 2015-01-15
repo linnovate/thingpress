@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
+/* Empty. Add your own CSS if you like */
+.pane {
+  background:black;
+  color:white;
+  background:url(../img/assets/bg.jpg) no-repeat top ;
+  background-size:cover;
+  font-family: "open sans", sans-serif;
+}
+
+#glucose {
+
+  margin:5%;
+  background:white  url(../img/assets/gauge.png) top 30px center no-repeat;
+  padding:30px; 
+  height:300px;
+  background-size:75%;
+  text-align:center;
+  padding-top:170px;
+}
+
+.glu-value {
+  font-size:100px;
+  font-weight:normal;
+  color:#cd2553
+}
+h4 {
+  color:#cd90a0;
+  text-transform: uppercase;
+  font-size:18px;
+  font-size:300;
+}
+
+#fitness .fit-message {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top:10px;
+  font-size:16px;
+  margin-bottom:30px;
+}
+
+.ruler {
+  height:50px;
+  background:url(../img/assets/lines.png) no-repeat top center;
+  background-size:90%;
+  display:block;
+  position:relative;
+
+}
+
+.triangle {
+  position: absolute;
+  top:-5px;
+  left:50%;
+  width:20px;
+  display:block;
+  height:20px;
+  background:url(../img/assets/arrow.png) no-repeat;
+  background-size:100%;
+
+}
+
+#data {
+  background:url(../img/assets/seperator.png) no-repeat top center;
+  padding-top:80px;
+  background-size:100%;
+}
+
+#data .number {
+  float:left;
+  width:33%;
+  text-align:center;
+
+}
+#data .value {
+  font-size:30px;
+  font-weight:300;
+  line-height:1;  
+}
+#data .value span {
+  font-size:14px;
+}
+#data .label {
+  text-transform: uppercase;
+  opacity: 0.8;
+  font-size:10px;
+  margin-top:5px;
+}

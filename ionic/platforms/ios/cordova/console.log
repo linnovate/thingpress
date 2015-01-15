@@ -1,8 +1,0 @@
-2015-01-15 18:38:26.353 ionic[89103:834808] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/liorkesos/Library/Developer/CoreSimulator/Devices/F3003356-243E-41E4-B083-6A2EA616EC58/data/Containers/Data/Application/19844E14-B97E-4EF5-BB46-F7297EFDACEE/Library/Cookies/Cookies.binarycookies
-2015-01-15 18:38:26.612 ionic[89103:834808] Apache Cordova native platform version 3.7.0 is starting.
-2015-01-15 18:38:26.612 ionic[89103:834808] Multi-tasking -> Device: YES, App: YES
-2015-01-15 18:38:26.625 ionic[89103:834808] Unlimited access to network resources
-2015-01-15 18:38:27.058 ionic[89103:834808] [CDVTimer][keyboard] 0.092983ms
-2015-01-15 18:38:27.058 ionic[89103:834808] [CDVTimer][TotalPluginStartup] 0.366032ms
-2015-01-15 18:38:27.883 ionic[89103:834808] Resetting plugins due to page load.
-2015-01-15 18:38:28.269 ionic[89103:834808] Finished load of: file:///Users/liorkesos/Library/Developer/CoreSimulator/Devices/F3003356-243E-41E4-B083-6A2EA616EC58/data/Containers/Bundle/Application/9E2191D0-C6E0-45F3-89EF-A3CB1946B877/ionic.app/www/index.html#/app/playlists
