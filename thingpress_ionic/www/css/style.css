@@ -13,10 +13,11 @@
   margin:5%;
   background:white  url(../img/assets/gauge.png) top 30px center no-repeat;
   padding:30px; 
-  height:300px;
+  height:270px;
   background-size:75%;
   text-align:center;
   padding-top:170px;
+  position: relative;
 }
 
 .glu-value {
@@ -24,10 +25,23 @@
   font-weight:normal;
   color:#cd2553
 }
+#needle {
+  width:12px;
+  height:108px;
+  background:url(../img/assets/pin.png)  top no-repeat;
+  background-size:100%;
+  position: absolute;
+  top:10px;
+  left:50%;
+  margin-left:-6px;
+  -webkit-transition:transform 300ms;
+  -webkit-transform-origin:bottom center;
+  -webkit-transform:rotate(30deg);
+}
 h4 {
   color:#cd90a0;
   text-transform: uppercase;
-  font-size:18px;
+  font-size:16px;
   font-size:300;
 }
 
@@ -82,7 +96,7 @@ h4 {
 }
 #data .label {
   text-transform: uppercase;
-  opacity: 0.8;
-  font-size:10px;
+  opacity: 0.95;
+  font-size:12px;
   margin-top:5px;
 }
