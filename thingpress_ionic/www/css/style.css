@@ -18,6 +18,7 @@
   text-align:center;
   padding-top:170px;
   position: relative;
+  box-shadow:5px 5px 5px rgba(0,0,0,0.8), -5px 5px 5px rgba(0,0,0,.8);
 }
 
 .glu-value {
@@ -54,8 +55,8 @@ h4 {
 }
 
 .ruler {
-  height:50px;
-  background:url(../img/assets/lines.png) no-repeat top center;
+  height:80px;
+  background:url(../img/assets/lines1.png) no-repeat top center;
   background-size:90%;
   display:block;
   position:relative;
@@ -76,7 +77,7 @@ h4 {
 
 #data {
   background:url(../img/assets/seperator.png) no-repeat top center;
-  padding-top:80px;
+  apadding-top:80px;
   background-size:100%;
 }
 
@@ -99,4 +100,17 @@ h4 {
   opacity: 0.95;
   font-size:12px;
   margin-top:5px;
+}
+.nvd3 .nv-axis line {
+  stroke:#a34760 !important;
+}
+
+.nv-axisMaxMin, .domain,
+.tick text,
+.nv-x, .nv-axisMaxMin{
+  display:none !important;
+}
+.nvd3 .nv-groups path.nv-line {
+  color:white !important;
+  stroke:white !important;
 }
