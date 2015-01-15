@@ -148,6 +148,6 @@ function workoutCost(temp, cal, sleep) {
   };
 }
 function workoutPrecentage(glou, cost){
-  var maxWorkout = glou - 60 - cost.min;
-  return (maxWorkout*100)/(cost.max - cost.min);
+  var maxWorkout = glou - 60;
+  return (maxWorkout*100)/(cost.max);
 }
