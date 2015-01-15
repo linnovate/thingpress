@@ -18,14 +18,23 @@ angular.module('starter', ['ionic','nvd3ChartDirectives'])
     }
   });
 })
-.controller('widgetCtrl',['$scope','Neura',
-  function($scope,Neura){
+.controller('widgetCtrl',['$scope','$http',
+  function($scope,$http){
     // get Neura stats
 
     $scope.neuraData = getNeuraData();
 
     function getNeuraData() {
-      Neura.get();
+      $http.jsonp('http://thingpress.cloudapp.net/api/neuraStat?callback=JSONP_CALLBACK').
+      success(function(data, status, headers, config) {
+        // this callback will be called asynchronously
+        // when the response is available
+        console.log(data);
+      }).
+      error(function(data, status, headers, config) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+      });
     };
 
     // get Climate
