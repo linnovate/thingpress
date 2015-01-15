@@ -27,14 +27,13 @@
 <!--    <script src="js/service.js"></script> -->
 
   </head>
-  <body ng-app="starter">
-
+  <body ng-app="starter" ng-controller="widgetCtrl">
     <ion-pane>
 
       <ion-content>
           <div id="glucose">
             <div id="needle"></div>
-              <span class="glu-value">102</span>
+              <span class="glu-value">{{glucose}}</span>
               <h4>Glucsoe Level</h4>
           </div>
 
@@ -48,21 +47,21 @@
           </div> <!--fit message-->
           <div id="data">
             <div class="number" id="data-sleep">
-              <div class="value">6.5<span>hr</span></div>
+              <div class="value">{{sleepDuration}}<span>hr</span></div>
               <div class="label">Sleep</div>
             </div>
             <div class="number" id="data-cal">
-              <div class="value">695 <span>cal</span></div>
+              <div class="value">{{calories}} <span>cal</span></div>
               <div class="label">Calories Burnt</div>
             </div>
             <div class="number" id="data-steps">
-              <div class="value">2323</div>
+              <div class="value">{{steps}}</div>
               <div class="label">steps</div>
             </div>
           </div>
           <!-- /#data -->
           <div id="graph">
-            <div ng-controller="widgetCtrl">
+            <div >
               <nvd3-line-chart
               data="exampleData"
               showXAxis="true"
