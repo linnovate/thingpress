@@ -1,10 +1,7 @@
 'use strict';
 
 //Articles service used for articles REST endpoint
-angular.module('starter').factory('getNeura', ['$resource',
+angular.module('starter').factory('Neura', ['$resource',
 function($resource) {
-  return $resource('api/neuraStat', {
-    articleId: '@_id'
-  }
-  });
+  return $resource('api/neuraStat');
 ]);

@@ -6,7 +6,6 @@
 angular.module('starter', ['ionic','nvd3ChartDirectives'])
 //angular.module('starter', ['ionic'])
 
-
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -19,8 +18,21 @@ angular.module('starter', ['ionic','nvd3ChartDirectives'])
     }
   });
 })
-.controller('widgetCtrl',['$scope',
+.controller('widgetCtrl',['$scope','getNeura',
   function($scope){
+    // get Neura stats
+
+    $scope.neuraData = getNeuraData();
+
+    function getNeuraData() {
+      Articles.get({
+        articleId: $stateParams.articleId
+      }, function(article) {
+        vm.article = article;
+      });
+    };
+
+    // get Climate
     $scope.exampleData = [
     {
       "key": "Series 1",
