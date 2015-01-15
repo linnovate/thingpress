@@ -14,6 +14,10 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/d3/d3.js"></script>
+    <script src="lib/nvd3/nv.d3.js"></script>
+    <script src="lib/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
+    <link rel="stylesheet" href="lib/nvd3/nv.d3.css"/>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -33,7 +37,7 @@
           </div>
 
           <div id="fitness">
-            
+
             <div class="fit-message">Your good for <strong>Intence </strong> workout</div>
             <div class="ruler">
               <span class="triangle"></span>
@@ -56,7 +60,15 @@
           </div>
           <!-- /#data -->
           <div id="graph">
-            test
+            <div ng-controller="widgetCtrl">
+              <nvd3-line-chart
+              data="exampleData"
+              showXAxis="true"
+              showYAxis="true"
+              tooltips="true"
+              interactive="true">
+            </nvd3-line-chart>
+            </div>
           </div>
           <!-- /#graph -->
       </ion-content>
