@@ -22,13 +22,14 @@ module.exports = {
     return this.getPath() + resourse;
   },
   send: function(climate) {
-    return request.post({
+    var data = {
       uri: this.getResource('climate'),
       form: {
         roomID: this.roomID,
         humid: climate.humid,
         temp: climate.temp
       }
-    });
+    };
+    return request.post(data);
   }
 };
