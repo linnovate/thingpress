@@ -1,9 +1,8 @@
 var tessel = require('tessel');
 var climatelib = require('climate-si7020');
-var meanAPI = require("./meanAPI");
+var meanAPI = require("./meanAPI").init();
 
 var climate = climatelib.use(tessel.port['A']);
-
 
 climate.on('ready', function () {
   console.log('Connected to si7020');
