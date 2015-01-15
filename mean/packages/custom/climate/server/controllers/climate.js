@@ -5,6 +5,7 @@
  */
 var mongoose  = require('mongoose'),
     Climate   = mongoose.model('Climate'),
+    neuraAPI  = require('../neura/neuraAPI').init(),
     _         = require('lodash');
 
 /**
@@ -90,5 +91,19 @@ exports.all = function(req, res) {
       });
     }
     res.json(climates);
+  });
+};
+
+exports.neuraStat = function(req, res) {
+  neuraAPI.getGlucose().on('response', function(glucose) {
+    neuraAPI.getTodaySummary().on('response', function(summary) {
+      var data = {
+        date: new Date(),
+        glucose: glucose.data.value,
+        steps: summary.data.steps,
+        calories: summary.data.calories,
+        sleepDuration: summary.data.sleepData.length
+      };
+    });
   });
 };
