@@ -1,7 +1,7 @@
 {
-  "name": "listener",
+  "name": "climate",
   "version": "0.0.1",
-  "description": "Some description of listener",
+  "description": "Some description of climate",
   "author": {
     "name": "mean scaffold"
   },
