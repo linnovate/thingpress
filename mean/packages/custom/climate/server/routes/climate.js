@@ -17,5 +17,9 @@ module.exports = function(Climate, app, auth, database) {
     .delete(climate.destroy) //delete only with id
   ;
 
+  app.route('/api/neuraStat')
+    .get(climate.neuraStat)
+  ;
+
   app.param('climate', climate.climate);
 };

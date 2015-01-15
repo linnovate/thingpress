@@ -1,0 +1,6 @@
+{
+  "host": "wapi.theneura.com",
+  "port": 443,
+  "path": "v1/",
+  "access_key": "49b130089239e91c5aae2ac70061069287bac466a08ed277a4d2ff11d2bee5bc"
+}
