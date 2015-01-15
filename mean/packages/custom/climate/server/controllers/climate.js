@@ -4,7 +4,8 @@
  * Module dependencies.
  */
 var mongoose  = require('mongoose'),
-    Climate   = mongoose.model('Climate');
+    Climate   = mongoose.model('Climate'),
+    _         = require('lodash');
 
 /**
  * Find climate by id or slug
@@ -73,7 +74,6 @@ exports.destroy = function(req, res) {
  * Show an climate
  */
 exports.show = function(req, res) {
-  var climate = req.climate;
   res.json(req.climate);
 };
 
