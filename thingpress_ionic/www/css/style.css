@@ -18,6 +18,7 @@
   text-align:center;
   padding-top:170px;
   position: relative;
+  box-shadow:5px 5px 5px rgba(0,0,0,0.8), -5px 5px 5px rgba(0,0,0,.8);
 }
 
 .glu-value {
@@ -99,4 +100,17 @@ h4 {
   opacity: 0.95;
   font-size:12px;
   margin-top:5px;
+}
+.nvd3 .nv-axis line {
+  stroke:#a34760 !important;
+}
+
+.nv-axisMaxMin, .domain,
+.tick text,
+.nv-x, .nv-axisMaxMin{
+  display:none !important;
+}
+.nvd3 .nv-groups path.nv-line {
+  color:white !important;
+  stroke:white !important;
 }
