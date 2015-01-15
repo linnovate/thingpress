@@ -55,8 +55,8 @@ h4 {
 }
 
 .ruler {
-  height:50px;
-  background:url(../img/assets/lines.png) no-repeat top center;
+  height:80px;
+  background:url(../img/assets/lines1.png) no-repeat top center;
   background-size:90%;
   display:block;
   position:relative;
